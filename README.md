@@ -2,12 +2,12 @@
 
 find . -type d -name "__pycache__" -exec rm -rf {} +
 
+## Login VM
 
+```shell
 ssh thundervm@20.46.156.229
 Titan@123456
-
-
-az acr login --name acrthundertitans
+```
 
 
 ## Install on VM
@@ -43,15 +43,28 @@ Password: oPqq8F/FXQzZnxkz+FvQJSAH18h/RInhTBhQR7wEC/+ACRDkuCYU
 Login Succeed
 ```
 
-## Run Application 
+## Build and Run Application 
 
 ```shell
 python3 app.py --host 0.0.0.0 --port 5000
 ```
 
+```shell
+ curl -X 'POST' \
+  'http://20.46.156.229:80/run-worker' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "personId": 1,
+  "visitOccurrenceId": 1,
+  "prescriptionId": 3
+}'
+```
+
 ## ACR
 
 ```shell
+# On local system
 docker build -f debug_docker/Dockerfile.app -t umar/hackathon-application:latest .
 
 az login
@@ -60,5 +73,6 @@ docker tag umar/hackathon-application:latest acrthundertitans.azurecr.io/hackath
 
 docker push acrthundertitans.azurecr.io/hackathon-application:latest
 
+# On local system
 docker pull acrthundertitans.azurecr.io/hackathon-application:latest
 ```
