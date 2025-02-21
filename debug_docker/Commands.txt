@@ -1,0 +1,35 @@
+############################################################
+                        DOCKER GENRAL
+############################################################
+
+# docker compose up -d
+# docker compose down
+
+# docker ps -a --filter "name=umar_*"
+# docker images --filter "reference=umar/*"
+
+# docker exec -it umar_pdf_parser /bin/bash
+
+############################################################
+                        DOCKER IMAGE
+############################################################
+
+# docker images --filter "reference=umar/*"
+
+# docker build -f debug_docker/Dockerfile.app -t umar/hackathon-application:latest .
+
+############################################################
+                        DOCKER CONTAINER 
+############################################################
+
+# docker compose -f debug_docker/docker-compose.yml up -d
+# docker compose -f debug_docker/docker-compose.yml down
+
+# docker ps -a --filter "name=umar_*"
+# docker logs umar_rag_application -f
+
+# docker run -it --rm umar/hackathon-application:latest
+
+# docker exec -it umar_hackathon_application /bin/bash
+
+# python3 app.py --host 0.0.0.0 --port 5000

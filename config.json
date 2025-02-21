@@ -1,0 +1,20 @@
+{   
+    "llm_configurations":{
+        "api_key": "",
+        "model_name": "", 
+        "model_endpoint": "",  
+        "api_config":{
+            "api_endpoint": "",
+            "model_name": "",
+            "model_api": "chat",
+            "max_tokens": 60,
+            "temperature": 0,
+            "stop": ["\n"]
+        }
+    },
+    "web_configurations":{
+        "subscription_key": "",
+        "custom_config_id": "",
+        "bing_url": ""
+    }
+}

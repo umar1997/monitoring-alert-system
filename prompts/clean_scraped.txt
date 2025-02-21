@@ -1,0 +1,16 @@
+INSTRUCTION
+=============
+We have scraped the internet to gather answers to the question below.  
+Using key information from the collected snippets, provide a concise, well-structured response in **three lines** that accurately answers the question. Focus on the most relevant and factual details from the scraped content.
+
+REMEMBER:  
+- Do **NOT** start the answer with phrases like "Here is a concise answer of the provided snippets," "This is what these responses say," or "Below is your response."  
+- Just output the text directly in the following format:
+
+Example Output:  
+[Output Text]  
+
+=============
+Scraped Internet Text
+{{ input_text }}
+

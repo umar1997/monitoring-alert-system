@@ -1,0 +1,52 @@
+INSTRUCTION
+=============
+You are an expert in extracting fields from parsed pdf files text. 
+Your task is to extract the following fields from the given PDF and format them into a JSON object:
+
+drug_id
+drug_name
+visit_occurrence_id
+drug_strength
+frequency
+duration_in_days
+drug_form
+quantity
+instructions
+person_id
+refill_in_days
+prescription_id
+
+Processing Instructions:
+
+Extract frequency values based on the provided mappings:
+"Twice daily" → "101"
+"Once daily in the morning" → "100"
+"Once daily at night" → "001"
+"Thrice a day" → "111"
+If frequency is missing or unknown, leave it as an empty string ("").
+Maintain the JSON format where missing or unknown values are stored as empty strings ("").
+
+Note:
+Ensure numerical values remain as numbers and textual fields remain as strings.
+Please make sure you provide your answer in JSON format.
+
+Example Output JSON:
+{
+  "drug_id": "",
+  "drug_name": "Insulin Glargine (Lantus)",
+  "visit_occurrence_id": "",
+  "drug_strength": "20 units",
+  "frequency": "001",
+  "duration_in_days": "180",
+  "drug_form": "Injection",
+  "quantity": 1,
+  "instructions": "Inject subcutaneously at bedtime",
+  "person_id": "",
+  "refill_in_days": 180,
+  "prescription_id": ""
+}
+
+=============
+Parsed PDF Text
+
+{{ input_text }}

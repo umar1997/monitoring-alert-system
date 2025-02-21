@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  hackathonapplication:
+    image: umar/hackathon-application:latest
+    # image: acrthundertitans.azurecr.io/hackathon-application:latest
+    container_name: umar_hackathon_application
+    ports:
+      - "28500:5000"
+    restart: always
+    # volumes:
+    #   - /Users/musalman/Desktop/RAG/monitoring-alert-system:/rag_app/new-app/
+      # - /nfs/users/ext_tr_muhammad_salman/RAGS/monitoring-alert-system:/rag_app/new-app/
+    env_file: ./.env
+    command: ["python3", "app.py", "--host", "0.0.0.0", "--port", "5000"]
+    # command: tail -f /dev/null
+    networks:
+      - umar_rag_heckathon_network
+
+networks:
+  umar_rag_heckathon_network:
+    driver: bridge
+    name: umar_rag_heckathon_network
